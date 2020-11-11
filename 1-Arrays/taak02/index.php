@@ -10,65 +10,44 @@
             $medewerkers = [
                 [
                     'voornaam' => 'Willem',
-                    'achternaam' => 'van Oranje',
+                    'achternaam' => ' van Oranje',
                     'functie'  => 'koning'
                 ],
                 [
                     'voornaam' => 'Donald',
-                    'achternaam' => 'Trump',
+                    'achternaam' => ' Trump',
                     'functie'  => 'president'
                 ],
                 [
                     'voornaam' => 'Homer',
-                    'achternaam' => 'Simpson',
+                    'achternaam' => ' Simpson',
                     'functie'  => 'fabrieksarbeider'
                 ],
                 [
                     'voornaam' => 'Johan',
-                    'achternaam' => 'Cruyff',
+                    'achternaam' => ' Cruyff',
                     'functie'  => 'voetbalicoon'
                 ],
                 [
                     'voornaam' => 'Badr',
-                    'achternaam' => 'Hari',
+                    'achternaam' => ' Hari',
                     'functie'  => 'Kickboxer'
                 ]
             ];
+
+            //echo $medewerkers[0]['voornaam']; 
+            //echo $medewerkers[1]['voornaam'];
+
+            for ($row = 0; $row < 5; $row++) {
+                //echo "<p><b> Array  $row</b></p>";
+                echo "<ul>";
+                //for ($col = 0; $col < 3; $col++) {
+                echo "<li>".$medewerkers[$row]['voornaam'].$medewerkers[$row]['achternaam'].' is een '.$medewerkers[$row]['functie']."</li>";
+                //}
+                echo "</ul>";
+            }
         ?>
 
-        <table>
-            <tr>
-                <th>voornaam</th>
-                <th>Achternaam</th>
-                <th>Functie</th>
-            </tr>
-            <?php foreach ($medewerkers as $value)  : ?>
-            <tr>
-                <td><?php echo $value[0]?></td>
-                <td><?php echo $value[1]?></td>
-                <td><?php echo $value[2]?></td>
-            </tr>
-            <tr>
-                <td><?php echo $value[0]?></td>
-                <td><?php echo $value[1]?></td>
-                <td><?php echo $value[2]?></td>
-            </tr>
-            <tr>
-                <td><?php echo $value[0]?></td>
-                <td><?php echo $value[1]?></td>
-                <td><?php echo $value[2]?></td>
-            </tr>
-            <tr>
-                <td><?php echo $value[0]?></td>
-                <td><?php echo $value[1]?></td>
-                <td><?php echo $value[2]?></td>
-            </tr>
-            <tr>
-                <td><?php echo $value[0]?></td>
-                <td><?php echo $value[1]?></td>
-                <td><?php echo $value[2]?></td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
+        
     </body>
 </html>
