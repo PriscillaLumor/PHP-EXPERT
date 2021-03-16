@@ -55,3 +55,5 @@ $games = [
     echo "Speelgoed ".$games['sport']['naam']. " van de uitgever ".$games['sport']['uitgever']." kost ".$games['sport']['prijs'].".<br>";
     echo "Speelgoed ".$games['action']['naam']. " van de uitgever ".$games['action']['uitgever']." kost ".$games['action']['prijs'].".<br>";
     echo "Speelgoed ".$games['fps']['naam']. " van de uitgever ".$games['fps']['uitgever']." kost ".$games['fps']['prijs'];
+
+?>

@@ -31,7 +31,7 @@
 
 
     <?php
-
+    
     $nieuwsberichten = [
         'Amsterdam' => [
             [
@@ -48,6 +48,12 @@
         'Sport' => [
             [
                 'titel' => 'Frenkie De Jong scoort drie keer',
+                'beschrijving' => 'Nullam cursus cursus lorem vel ultrices. In congue, dui sed volutpat posuere, lorem nisi varius eros, vel dapibus quam est vitae mi. Ut et nulla a est laoreet efficitur. Cras accumsan urna libero, in interdum sapien molestie et. Aliquam in magna augue. Vivamus venenatis bibendum nisi id bibendum. Nulla et mi mi.',
+                'image' => 'images/frenkie01.jpg'
+
+            ],
+            [
+                'titel' => 'Ajax dit en dat',
                 'beschrijving' => 'Nullam cursus cursus lorem vel ultrices. In congue, dui sed volutpat posuere, lorem nisi varius eros, vel dapibus quam est vitae mi. Ut et nulla a est laoreet efficitur. Cras accumsan urna libero, in interdum sapien molestie et. Aliquam in magna augue. Vivamus venenatis bibendum nisi id bibendum. Nulla et mi mi.',
                 'image' => 'images/frenkie01.jpg'
 
@@ -75,19 +81,27 @@
         ],
 
     ];
+
+    // echo $nieuwsberichten["Sport"][0]["titel"];
+    // echo $nieuwsberichten["Sport"][0]["beschrijving"];
+    // echo $nieuwsberichten["Sport"][0]["image"];
     ?>
     <!-- Pas de code hieronder aan  -->
     <!-- Loop door de array $nieuwsberichten en toon de gegevens in de juist HTML-tags  -->
 
-
-    <h1></h1>
-    <div class="content">
-
-        <h2 class="title"></h2>
-        <p class="title"></p>
-        <img src="" class="title">
-
-    </div>
+    <?php foreach ($nieuwsberichten as $onderwerp => $berichtenArray)  : ?>
+            <h1><?php echo $onderwerp ?> </h1>
+            
+            <?php foreach ($berichtenArray as $key => $value)  : ?>
+            
+                <div class="content">
+                    <h2 class="title"><?php echo $value['titel'] ?></h2>
+                    <p class="title"><?php echo $value['beschrijving'] ?> </p>
+                    <img src="<?php echo $value['image']?>" class="title">
+                </div>  
+            <?php endforeach;?>
+        
+    <?php endforeach;?>
 
 
 </body>
