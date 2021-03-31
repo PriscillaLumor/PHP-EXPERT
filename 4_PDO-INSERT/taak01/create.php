@@ -1,5 +1,8 @@
 <?php
 
+    //This is wrong 
+    //Creat1.php is correct
+    
     require "database.php";
 
     if (isset($_POST["form-add"] ) && $_POST["form-firstname"] !="") {

@@ -2,7 +2,7 @@
 
     require "database.php";
 
-    $sql = "SELECT * FROM products";
+    $sql = "SELECT * FROM users";
     $statement = $db_conn->prepare($sql); 
     $statement->execute();
     $database_gegevens = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -26,9 +26,11 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Name</th>
-                    <th>Purchase_price</th>
-                    <th>Selling_price</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>E-mail</th>
+                    <th>Password</th>
+                    <th>Role</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,12 +39,14 @@
 
                 <tr>
                     <td><?php echo $item["id"]?></td>
-                    <td><?php echo $item["name"]?></td>
-                    <td><?php echo $item["purchase_price"]?></td>
-                    <td><?php echo $item["selling_price"]?></td>
+                    <td><?php echo $item["firstname"]?></td>
+                    <td><?php echo $item["lastname"]?></td>
+                    <td><?php echo $item["email"]?></td>
+                    <td><?php echo $item["password"]?></td>
+                    <td><?php echo $item["role"]?></td>
                         
                     <td>
-                        <a href="products_delete.php?id=<?php echo $item["id"]?>">Delete</a>
+                        <a href="user_delete.php?id=<?php echo $item["id"]?>">Delete</a>
                     </td>
                 </tr> 
                 <?php endforeach; ?>  
