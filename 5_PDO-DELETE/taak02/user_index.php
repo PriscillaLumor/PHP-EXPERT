@@ -48,8 +48,10 @@
                     <td>
                         <a href="user_delete.php?id=<?php echo $item["id"]?>">Delete</a>
                     </td>
-                </tr> 
+                </tr>
+
                 <?php endforeach; ?>  
+                
             </tbody>
 
         </table>
