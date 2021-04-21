@@ -4,12 +4,11 @@
     $id = $_GET["ID"];
 
 
-    $sql = "SELECT Title FROM superheroes WHERE ID = :ph_id";
+    $sql = "SELECT * FROM superheroes WHERE ID = :ph_id";
     $stmt = $db_conn->prepare($sql); //stuur naar mysql.
     $stmt->bindParam(":ph_id", $id);
     $stmt->execute();
-    $item = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+    $database_gegevens = $stmt->fetch(PDO::FETCH_ASSOC);
     //header("location: superheroes_show.php");
 
 ?>
@@ -26,46 +25,41 @@
     
 
 <div class="container">
-        <h1> Heroes</h1>
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Alignment</th>
-                    <th>Gender</th>
-                    <th>Identity</th>
-                    <th></th>
-                    
-                </tr>
-            </thead>
-            <tbody>
+    <h1>Discription of <?php echo $database_gegevens["Title"]?></h1>
 
-                 <tr>
-                    <td><?php echo $item["ID"]?></td>
-                    <td><?php echo $item["Title"]?></td>
-                    <td><?php echo $item["Alignment"]?></td>
-                    <td><?php echo $item["Identity"]?></td>
-                    <td><?php echo $item["PlaceOfBirth"]?></td>
-                    <td><?php echo $item["Citizenship"]?></td>
-                    <td><?php echo $item["Occupation"]?></td>
-                    <td><?php echo $item["PlaceOfDeath"]?></td>
-                    <td><?php echo $item["MaritalStatus"]?></td>
-                    <td><?php echo $item["Gender"]?></td>
-                    <td><?php echo $item["Height"]?></td>
-                    <td><?php echo $item["Weight"]?></td>
-                    <td><?php echo $item["Eyes"]?></td>
-                    <td><?php echo $item["Hair"]?></td>
-                    
-                    <td>
-                        <a href="superheroes_show.php?ID=<?php echo $item["ID"]?>">More</a>
-                    </td>
-                </tr>
+    <dl>
+        <dt><b>ID</b></dt>
+        <dd><?php echo $database_gegevens["ID"]?></dd>
+        <dt><b>Title</b></dt>
+        <dd><?php echo $database_gegevens["Title"]?></dd>
+        <dt><b>Alignment</b></dt>
+        <dd><?php echo $database_gegevens["Alignment"]?></dd>
+        <dt><b>Identity</b></dt>
+        <dd><?php echo $database_gegevens["Identity"]?></dd>
+        <dt><b>Place Of Birth</b></dt>
+        <dd><?php echo $database_gegevens["PlaceOfBirth"]?></dd>
+        <dt><b>Citizenship</b></dt>
+        <dd><?php echo $database_gegevens["Citizenship"]?></dd>
+        <dt><b>Occupation</b></dt>
+        <dd><?php echo $database_gegevens["Occupation"]?></dd>
+        <dt><b>Marital Status</b></dt>
+        <dd><?php echo $database_gegevens["MaritalStatus"]?></dd>
+        <dt><b>Gender</b></dt>
+        <dd><?php echo $database_gegevens["Gender"]?></dd>
+        <dt><b>Height</b></dt>
+        <dd><?php echo $database_gegevens["Height"]?></dd>
+        <dt><b>Weight</b></dt>
+        <dd><?php echo $database_gegevens["Weight"]?></dd>
+        <dt><b>Eyes Color</b></dt>
+        <dd><?php echo $database_gegevens["Eyes"]?></dd>
+        <dt><b>Hair Color</b></dt>
+        <dd><?php echo $database_gegevens["Hair"]?></dd>
+        <dt><b>Place Of Death</b></dt>
+        <dd><?php echo $database_gegevens["PlaceOfDeath"]?></dd>
+    </dl>
 
-            </tbody>
-
-        </table>
-    </div>
+        
+</div>
     
 
 </body>

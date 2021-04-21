@@ -26,7 +26,7 @@
 <body>
 
     <div class="container">
-        <h1> Heroes</h1>
+        <h1> Superheroes Table </h1>
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
@@ -36,6 +36,8 @@
                     <th>Gender</th>
                     <th>Identity</th>
                     <th>More</th>
+                    <th>Update</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -50,6 +52,14 @@
                     <td><?php echo $item["Identity"]?></td>
                     <td>
                         <a href="superheroes_show.php/?ID=<?php echo $item["ID"]?>">More</a>
+                    </td>
+
+                    <td>
+                        <a href="superheroes_edit.php/?ID=<?php echo $item["ID"]?>">Update</a>
+                    </td>
+
+                    <td>
+                        <a href="superheroes_delete.php?id=<?php echo $item["ID"]?>">Delete</a>
                     </td>
                 </tr>
 
